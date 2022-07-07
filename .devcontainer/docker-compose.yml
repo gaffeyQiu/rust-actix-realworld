@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+    real-world:
+      build:
+        context: ..
+        dockerfile: .devcontainer/Dockerfile
+      volumes:
+      - ..:/app
+      links:
+      - db
+      ports:
+      - "3000:3000"
+    db:
+      image: postgres:14.4
+      ports:
+      - "5432:5432"
+      environment:
+        POSTGRES_DB: realworld-rust-actix-web
+        POSTGRES_USER: root
+        POSTGRES_PASSWORD: root

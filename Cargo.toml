@@ -1,0 +1,34 @@
+[package]
+name = "rust-actix-realword"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# 高性能 web 框架
+actix-web = "4"
+
+# 加载 .env 文件和系统环境变量合并在一起，然后可以使用标准库 std::env 方法
+dotenv = "0.15"
+
+# rust 时间库
+chrono = {version = "0.4", features = ["serde"]}
+
+# 序列化和反序列化
+serde = {version = "1.0", features = ["derive"]}
+serde_json = "1.0"
+
+# 常用的 orm 框架
+diesel = { version = "1.4", features = ["r2d2", "postgres", "chrono", "uuidv07", "serde_json"] }
+
+# 派生 std::error::Error 宏
+thiserror = "1.0"
+
+# 用于hash用户密码 
+bcrypt = { version = "0.13.0" }
+
+# 生成 token 
+jsonwebtoken = { version = "7" }
+
+uuid = {version = "0.8", features = ["v4", "serde"]}
